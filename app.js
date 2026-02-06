@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
       <li>Product 1: Phone</li>
       <li>Product 2: Laptop</li>
       <li>Product 3: Shoes</li>
+      <li>Prodcut 4: watches</li>
     </ul>
   `);
 });
