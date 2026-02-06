@@ -15,6 +15,6 @@ spec:
       containers:
       - name: kanal-kart
         image: kanalarasan77/kanal-kart:latest
+        imagePullPolicy: Always    # <-- ADD THIS LINE
         ports:
         - containerPort: 3000
-
