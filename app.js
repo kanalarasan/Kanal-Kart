@@ -140,7 +140,7 @@ app.get('/', (req, res) => {
     <div class="product">
       <div class="emoji">👟</div>
       <h3>Shoes</h3>
-      <div class="price">$150</div>
+      <div class="price">$149</div>
       <button onclick="addToCart('Shoes')">Add to Cart</button>
     </div>
 
