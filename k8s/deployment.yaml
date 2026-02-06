@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanal-kart-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kanal-kart
+  template:
+    metadata:
+      labels:
+        app: kanal-kart
+    spec:
+      containers:
+      - name: kanal-kart
+        image: kanalarasan77/kanal-kart:latest
+        ports:
+        - containerPort: 3000
+
