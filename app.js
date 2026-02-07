@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
       <li>Product 3: Shoes</li>
       <li>Prodcut 4: Watches</li>
       <li>Prodcut 5: Bags</li>
-      <li>Product 6: Wallets </li>
     </ul>
   `);
 });
