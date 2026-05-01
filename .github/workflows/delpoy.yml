@@ -54,4 +54,3 @@ jobs:
             kanal-kart=$IMAGE_NAME:$IMAGE_TAG
 
           kubectl rollout status deployment/kanal-kart-deployment
-```
