@@ -1,19 +1,117 @@
+```javascript
 const express = require('express');
 const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
   res.send(`
-    <h1>Welcome to Kanal-Kart</h1>
-    <ul>
-      <li>Product 1: Phone</li>
-      <li>Product 2: Laptop</li>
-      <li>Product 3: Shoes</li>
-      <li>Prodcut 4: Watches</li>
-      <li>Prodcut 5: Tablets</li>
-      </ul>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Kanal-Kart</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          background: #f4f6f8;
+        }
+        header {
+          background: linear-gradient(90deg, #007bff, #00c6ff);
+          color: white;
+          padding: 20px;
+          text-align: center;
+        }
+        h1 {
+          margin: 0;
+        }
+        .container {
+          padding: 30px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+        }
+        .card {
+          background: white;
+          border-radius: 10px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          transition: transform 0.2s;
+        }
+        .card:hover {
+          transform: translateY(-5px);
+        }
+        .card h3 {
+          margin: 10px 0;
+        }
+        .btn {
+          display: inline-block;
+          margin-top: 10px;
+          padding: 8px 15px;
+          background: #007bff;
+          color: white;
+          border-radius: 5px;
+          text-decoration: none;
+        }
+        .btn:hover {
+          background: #0056b3;
+        }
+        footer {
+          text-align: center;
+          padding: 15px;
+          background: #222;
+          color: white;
+          margin-top: 20px;
+        }
+      </style>
+    </head>
+    <body>
+
+      <header>
+        <h1>🛒 Kanal-Kart</h1>
+        <p>Your one-stop shopping destination</p>
+      </header>
+
+      <div class="container">
+        <div class="card">
+          <h3>📱 Phone</h3>
+          <p>Latest smartphones at best price</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+          <h3>💻 Laptop</h3>
+          <p>High performance laptops</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+          <h3>👟 Shoes</h3>
+          <p>Comfortable and stylish</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+          <h3>⌚ Watches</h3>
+          <p>Premium watches collection</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+
+        <div class="card">
+          <h3>📱 Tablets</h3>
+          <p>Portable and powerful devices</p>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+
+      <footer>
+        <p>© 2026 Kanal-Kart | Built with ❤️</p>
+      </footer>
+
+    </body>
+    </html>
   `);
 });
 
-app.listen(PORT, () => console.log(`App running on port ${PORT}`));
-
+app.listen(PORT, () => console.log(\`App running on port \${PORT}\`));
+```
