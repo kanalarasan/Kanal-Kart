@@ -1,3 +1,4 @@
+```yaml
 name: Build and Deploy
 
 on:
@@ -33,24 +34,19 @@ jobs:
           docker push $IMAGE_NAME:$IMAGE_TAG
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
-      # 4️⃣ Configure kubeconfig (base64 safe method)
+      # 4️⃣ Configure kubeconfig (use local cluster config)
       - name: Configure Kubeconfig
         run: |
-          echo "${{ secrets.KUBECONFIG_DATA }}" | base64 --decode > $HOME/kubeconfig.yaml
-          export KUBECONFIG=$HOME/kubeconfig.yaml
-          
-          echo "===== DEBUG: kubeconfig preview ====="
-          head -n 5 $HOME/kubeconfig.yaml
-          echo "====================================="
-
+          export KUBECONFIG=/etc/kubernetes/admin.conf
           kubectl get nodes
 
       # 5️⃣ Deploy to Kubernetes
       - name: Deploy to Kubernetes
         run: |
-          export KUBECONFIG=$HOME/kubeconfig.yaml
+          export KUBECONFIG=/etc/kubernetes/admin.conf
 
           kubectl set image deployment/kanal-kart-deployment \
             kanal-kart=$IMAGE_NAME:$IMAGE_TAG
 
           kubectl rollout status deployment/kanal-kart-deployment
+```
