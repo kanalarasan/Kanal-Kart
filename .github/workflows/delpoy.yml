@@ -34,10 +34,10 @@ jobs:
           docker push $IMAGE_NAME:$IMAGE_TAG
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
-      # 4️⃣ Configure kubeconfig (persist across steps)
+      # 4️⃣ Configure kubeconfig (base64 decoded)
       - name: Configure Kubeconfig
         run: |
-          echo "${{ secrets.KUBECONFIG_DATA }}" > $HOME/kubeconfig.yaml
+          echo "${{ secrets.KUBECONFIG_DATA }}" | base64 --decode > $HOME/kubeconfig.yaml
           echo "KUBECONFIG=$HOME/kubeconfig.yaml" >> $GITHUB_ENV
           kubectl config view
 
