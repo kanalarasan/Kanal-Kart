@@ -101,7 +101,7 @@ app.get('/', (req, res) => {
         </div>
 
         <div class="card">
-          <h3>👟 Shoes</h3>
+          <h3>👟 Shoes (offer 50%)</h3>
           <p>Comfortable and stylish</p>
           <a href="#" class="btn">Buy Now</a>
         </div>
